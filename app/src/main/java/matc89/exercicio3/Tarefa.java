@@ -1,6 +1,6 @@
 package matc89.exercicio3;
 
-public class Tarefa {
+public class Tarefa implements Comparable<Tarefa> {
     private String descricao;
     private int prioridade;
 
@@ -15,5 +15,10 @@ public class Tarefa {
 
     public int getPrioridade() {
         return prioridade;
+    }
+
+    @Override
+    public int compareTo(Tarefa other) {
+        return this.getPrioridade() - other.getPrioridade();
     }
 }
